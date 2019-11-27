@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from foodtaskerapp.models import Restaurant
 
 
+# Forms used to authenticate Users
 class UserForm(forms.ModelForm):
     email = forms.CharField(max_length=100, required=True)
     password = forms.CharField(widget=forms.PasswordInput())
@@ -13,6 +14,7 @@ class UserForm(forms.ModelForm):
         fields = ("username", "password", "first_name", "last_name", "email")
 
 
+# Form used for signing up a new restaurant
 class RestaurantForm(forms.ModelForm):
     class Meta:
         model = Restaurant
