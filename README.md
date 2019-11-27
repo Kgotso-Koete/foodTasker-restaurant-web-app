@@ -22,19 +22,23 @@ The back end is deployed on ??, and the front end is deployed on ??. Here is the
 
 Run `?? install`
 
-## 3: Run Django
+## 2: Create virtual environment
+
+1. Create a top level (1) folder called foodTasker
+2. Create a second level (2) folder called foodtasker and download this repository code into this folder
+3. To set up a virtual environment, run `python3 -m venv myvirtualenv/foodtasker-virtualenv`
+
+## 3: Run Django virtual environment
+
+Navigate(cd) to the top level (1) foodTasker folder and run `source foodtasker-virtualenv/foodtasker/bin/activate`
+
+## 4: Run Django server
 
 Run `python manage.py runserver`
 
-## 4: View application
+## 5: View application
 
 Open up `http://localhost:8000/` in your browser
-
-Navigate to your this [folder]() and run `source foodtasker-virtualenv/foodtasker/bin/activate`
-
-## 4: Run project
-
-Run `python manage.py runserver`
 
 # Application Structure
 
