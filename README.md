@@ -34,7 +34,7 @@ Navigate to your this [folder]() and run `source foodtasker-virtualenv/foodtaske
 
 ## 4: Run project
 
-Run `npm start`
+Run `python manage.py runserver`
 
 # Application Structure
 
