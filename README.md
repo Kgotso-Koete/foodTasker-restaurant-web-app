@@ -16,7 +16,7 @@ This code is for the back end. [here is the tutorial](https://coderealprojects.c
 
 # How to run the code:
 
-The back end is deployed on ??, and the front end is deployed on ??. Here is the [demo](), and here is the production api link `api link` that can be used with any front end for requests
+The back end API is deployed on Heroku, and the front end is deployed on ??. Here is the [demo](), and here is the production api link `https://arcane-spire-07518.herokuapp.com/` that can be used with any front end for requests
 
 ## 1: Install packages
 
