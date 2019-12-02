@@ -1,4 +1,5 @@
 {% extends 'base_signup.html' %}
+{% load bootstrap3 %}
 
 {% block title %}Sign In{% endblock %}
 {% block heading %}Restaurant - Sign In{% endblock %}
@@ -6,7 +7,8 @@
 {% block content %}
     <form method="POST">
       {% csrf_token %}
-      {{ form }}
-      <button type="submit">Sign In</button>
+      {% bootstrap_form form %}
+      <button type="submit" class="btn btn-pink pull-right">Sign In</button>
     </form>
+    <a href="{% url 'restaurant-sign-up' %}">Become a Restaurant</a>
 {% endblock %}
