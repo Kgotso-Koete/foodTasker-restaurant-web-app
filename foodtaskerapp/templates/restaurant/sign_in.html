@@ -1,21 +1,12 @@
-{% load staticfiles %}
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>foodTasker</title>
+{% extends 'base_signup.html' %}
 
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+{% block title %}Sign In{% endblock %}
+{% block heading %}Restaurant - Sign In{% endblock %}
 
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
-  </head>
-  <body>
+{% block content %}
     <form method="POST">
-      {% csrf_token %} {{ form }}
+      {% csrf_token %}
+      {{ form }}
       <button type="submit">Sign In</button>
     </form>
-  </body>
-</html>
+{% endblock %}
