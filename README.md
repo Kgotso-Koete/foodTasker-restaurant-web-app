@@ -27,10 +27,11 @@ Run `?? install`
 1. Create a top level (1) folder called foodTasker
 2. Create a second level (2) folder called foodtasker and download this repository code into this folder
 3. To set up a virtual environment, run `python3 -m venv myvirtualenv/foodtasker-virtualenv`
+4. Install dependencies by moving (cd) into the foodtasker folder and running `pip install -r requirements.txt`
 
 ## 3: Run Django virtual environment
 
-Navigate(cd) to the top level (1) foodTasker folder and run `source foodtasker-virtualenv/foodtasker/bin/activate`
+Navigate(cd) to the top level (1) foodTasker folder and run `source foodtasker-virtualenv/bin/activate`
 
 ## 4: Run Django server
 
