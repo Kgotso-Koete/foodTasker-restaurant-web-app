@@ -20,3 +20,4 @@ six==1.10.0
 social-auth-core==0.2.1
 stripe==1.37.0
 whitenoise==3.2.1
+python-dotenv==0.10.3 
