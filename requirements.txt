@@ -6,7 +6,7 @@ django-braces==1.9.0
 django-cors-headers==1.3.1
 django-oauth-toolkit==0.10.0
 django-rest-framework-social-oauth2==1.0.4
-djangorestframework==3.4.3
+djangorestframework==3.9.1
 gunicorn==19.6.0
 oauthlib==1.0.3
 Pillow==5.1.0
