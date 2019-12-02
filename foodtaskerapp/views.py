@@ -12,7 +12,7 @@ def home(request):
 
 @login_required(login_url='/restaurant/sign-in/')
 def restaurant_home(request):
-    return render(request, 'restaurant/home.html', {})
+    return render(request, 'restaurant/base.html', {})
 
 
 @login_required(login_url='/restaurant/sign-in/')
