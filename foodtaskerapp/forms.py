@@ -13,6 +13,13 @@ class UserForm(forms.ModelForm):
         model = User
         fields = ("username", "password", "first_name", "last_name", "email")
 
+# Forms used for Restaurant administrator to edit their own details
+class UserFormForEdit(forms.ModelForm):
+    email = forms.CharField(max_length=100, required=True)
+
+    class Meta:
+        model = User
+        fields = ("first_name", "last_name", "email")
 
 # Form used for signing up a new restaurant
 class RestaurantForm(forms.ModelForm):
