@@ -25,6 +25,9 @@ urlpatterns = [
         views.restaurant_account,
         name='restaurant-account'),
     url(r'^restaurant/meal/$', views.restaurant_meal, name='restaurant-meal'),
+    url(r'^restaurant/meal/add/$',
+        views.restaurant_add_meal,
+        name='restaurant-add-meal'),
     url(r'^restaurant/order/$',
         views.restaurant_order,
         name='restaurant-order'),
@@ -36,4 +39,4 @@ urlpatterns = [
     url(r'^api/social/', include('rest_framework_social_oauth2.urls')),
     # /convert-token (sign in/ sign up)
     # /revoke-token (sign out)
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 

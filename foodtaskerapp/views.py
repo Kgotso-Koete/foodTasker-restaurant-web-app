@@ -17,12 +17,14 @@ def restaurant_home(request):
 
 @login_required(login_url='/restaurant/sign-in/')
 def restaurant_account(request):
-    user_form = UserFormForEdit(instance = request.user)
-    restaurant_form = RestaurantForm(instance = request.user.restaurant)
+    user_form = UserFormForEdit(instance=request.user)
+    restaurant_form = RestaurantForm(instance=request.user.restaurant)
 
     if request.method == "POST":
-        user_form = UserFormForEdit(request.POST, instance = request.user)
-        restaurant_form = RestaurantForm(request.POST, request.FILES, instance = request.user.restaurant)
+        user_form = UserFormForEdit(request.POST, instance=request.user)
+        restaurant_form = RestaurantForm(request.POST,
+                                         request.FILES,
+                                         instance=request.user.restaurant)
 
         if user_form.is_valid() and restaurant_form.is_valid():
             user_form.save()
@@ -32,6 +34,11 @@ def restaurant_account(request):
         "user_form": user_form,
         "restaurant_form": restaurant_form
     })
+
+
+@login_required(login_url='/restaurant/sign-in/')
+def restaurant_add_meal(request):
+    return render(request, 'restaurant/add_meal.html', {})
 
 
 @login_required(login_url='/restaurant/sign-in/')
