@@ -1,22 +1,22 @@
 body {
   padding-top: 50px;
-  background-color: #EDF2F5;
+  background-color: #edf2f5;
   overflow: auto;
 }
 
 .bg-blue {
-  background-color: #3F3F63;
+  background-color: #3f3f63;
 }
 
 .btn-pink {
   color: white;
-  background-color: #EE5462;
+  background-color: #ee5462;
 }
 
 .btn-pink:hover,
 .btn-pink:focus {
   color: white;
-  background-color: #DA4F5D;
+  background-color: #da4f5d;
 }
 
 /* SIDE BAR */
@@ -26,7 +26,7 @@ body {
   top: 0;
   left: 0;
   padding: 0;
-  background-color: #3F3F63;
+  background-color: #3f3f63;
   overflow: auto;
 }
 
@@ -49,7 +49,7 @@ body {
 /* SIDE BAR - LIST */
 .sidebar .list-group {
   padding: 0;
-  background-color: #3F3F63;
+  background-color: #3f3f63;
 }
 
 .sidebar .list-group > span {
@@ -63,7 +63,7 @@ body {
 
 .sidebar .list-group .list-group-item,
 .sidebar .list-group .list-group-item:focus {
-  background-color: #3F3F63;
+  background-color: #3f3f63;
   color: #b6b4c1;
   border: 0;
   padding-left: 60px;
@@ -83,7 +83,7 @@ body {
 
 .sidebar .list-group .list-group-item .badge,
 .sidebar .list-group .list-group-item.active .badge {
-  background-color: #EE5462;
+  background-color: #ee5462;
   color: #e0deeb;
 }
 
