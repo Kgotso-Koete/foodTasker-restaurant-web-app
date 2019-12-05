@@ -3,7 +3,7 @@ from django import forms
 from django.contrib.auth.models import User
 from foodtaskerapp.models import Restaurant, Meal
 
-
+ 
 # Forms used to authenticate Users
 class UserForm(forms.ModelForm):
     email = forms.CharField(max_length=100, required=True)

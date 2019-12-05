@@ -28,6 +28,7 @@ urlpatterns = [
     url(r'^restaurant/meal/add/$',
         views.restaurant_add_meal,
         name='restaurant-add-meal'),
+    url(r'^restaurant/meal/edit/(?P<meal_id>\d+)/$', views.restaurant_edit_meal, name = 'restaurant-edit-meal'), 
     url(r'^restaurant/order/$',
         views.restaurant_order,
         name='restaurant-order'),
@@ -40,3 +41,5 @@ urlpatterns = [
     # /convert-token (sign in/ sign up)
     # /revoke-token (sign out)
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 
+
+ 
