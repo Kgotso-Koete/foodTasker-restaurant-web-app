@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from foodtaskerapp.forms import UserForm, RestaurantForm, UserFormForEdit, MealForm
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
-from foodtaskerapp.models import Meal
+from foodtaskerapp.models import Meal, Order
 
 
 # Create your views here.
@@ -74,10 +74,10 @@ def restaurant_edit_meal(request, meal_id):
     })
 
 
-
 @login_required(login_url='/restaurant/sign-in/')
 def restaurant_order(request):
-    return render(request, 'restaurant/order.html', {})
+    orders = Order.objects.filter(restaurant = request.user.restaurant).order_by("-id")
+    return render(request, 'restaurant/order.html', {"orders": orders})
 
 
 @login_required(login_url='/restaurant/sign-in/')
@@ -111,4 +111,4 @@ def restaurant_sign_up(request):
         "restaurant_form": restaurant_form
     })
 
-  
+   
