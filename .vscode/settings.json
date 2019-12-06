@@ -6,5 +6,6 @@
     "python.linting.pycodestyleEnabled": true,
     "powermode.enabled": true,
     "powermode.comboThreshold": 5,
-    "powermode.presets": "flames"
+    "powermode.presets": "flames",
+    "editor.formatOnSave": true
 }
