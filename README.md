@@ -7,13 +7,15 @@ Foodtasker is an UberEats clone in which customers can order takeaway food on th
 # Click here for the [demo](https://arcane-spire-07518.herokuapp.com/restaurant/)
 </hr>
 
-## Technology stack
+### Technology stack
 
 Python Django and Bootstrap 3
 </br>
 </br>
 
-The application consists of 4 components:
+### Application overview
+
+The combined application consists of 4 components:
 
 1. Back-end (part of this code base): A back end that handles CRUD operations with an api specified in the `api_spec folder`.
 2. Restaurant Front-end (part of this code base): A web-based administrative front-end for restaurant employees to manage orders
@@ -30,15 +32,15 @@ This code is for the back end and web based administration site for restaurant e
 
 [Code4Startup](https://code4startup.com/) tutorial on building an UberEats clone based on the [foodTasker app tutorial](https://code4startup.com/).
 
-# Description and features
+## Description and features
 
-## General functionality
+### General functionality
 
 - Authenticate users using JWT
 - CRU\* users (sign up & settings page - no deleting required)
 - CRUD on Restaurants and Meals
 
-## The general page breakdown is as follows:
+### The general page breakdown is as follows:
 
 ### User pages
 
@@ -57,30 +59,30 @@ This code is for the back end and web based administration site for restaurant e
   - Edit meals after clicking on a meal name (URL: `api_baseURL/restaurant/meal/edit/`)
 - Report page where restaurants can view revenue and other statistics (URL: `api_baseURL/restaurant/report/`)
 
-# How to run the code:
+## How to run the code:
 
 The back end API is deployed on Heroku, and the front end is deployed on ??. Here is the [demo](), and here is the production api link `https://arcane-spire-07518.herokuapp.com/` that can be used with any front end for requests
 
-## 1: Create virtual environment
+### 1: Create virtual environment
 
 1. Create a top level (1) folder called foodTasker
 2. Create a second level (2) folder called foodtasker and download this repository code into this folder
 3. To set up a virtual environment, run `python3 -m venv myvirtualenv/foodtasker-virtualenv`
 4. Install dependencies by moving (cd) into the foodtasker folder and running `pip install -r requirements.txt`
 
-## 2: Run Django virtual environment
+### 2: Run Django virtual environment
 
 Navigate(cd) to the top level (1) foodTasker folder and run `source foodtasker-virtualenv/bin/activate`
 
-## 3: Run Django server
+### 3: Run Django server
 
 Run `python manage.py runserver`
 
-## 4: View application
+### 4: View application
 
 Open up `http://localhost:8000/` in your browser
 
-# Application Structure
+## Application Structure
 
 - `foodtasker/` where key settings are specified
   - `settings/` where all the key settings have been specified
@@ -94,24 +96,24 @@ Open up `http://localhost:8000/` in your browser
   - `requirements.txt` specify all packages/dependencies to be downloaded before running the application
 - `db.sqlite3` database
 
-# Authentication
+## Authentication
 
 Requests are authenticated using the `Authorization` header with a valid JWT. Authentication is handled by djangoauth and django-rest-framework-social-oauth2
 
-# Timesheet log
+## Timesheet log
 
 - Back end
 
   - Version 1 (Code4Startup Tutorial): x hours
   - Version 2 (personal modifications): x hours
 
-# Acknowledgements
+## Acknowledgements
 
-Special thanks to Leo Trieu's [Code4Startup](https://code4startup.com/) for a great tutorial. I had been looking for a tutorial for a real world 2 sided market application with geo-location features and I found one with thanks to Code4Startup. We need more of this kind of tutorial and less of 'Foo Bar'.
+Special thanks to Leo Trieu's [Code4Startup](https://code4startup.com/projects) for a great tutorial. I had been looking for a tutorial for a real world 2 sided market application with geo-location features and I found one with thanks to Code4Startup. We need more of this kind of tutorial and less of 'Foo Bar'.
 <br/>
 <br/>
 
-# License
+## License
 
 The codebase is MIT licensed unless otherwise specified.
 
