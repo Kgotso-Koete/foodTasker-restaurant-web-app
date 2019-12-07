@@ -1,7 +1,5 @@
 # foodTasker API Spec
 
----
-
 ### Customer APIs
 
 ### Customer gets a list of restaurants
@@ -167,8 +165,6 @@ Example result body:
 
 <hr>
 
----
-
 ### Driver APIs
 
 ### Driver gets a list of orders that are ready and don't have driver assigned
@@ -240,7 +236,7 @@ Example variables included in query parameters:
 
 ```javascript
  """
-        form body params:
+        form params:
             access_token
             order_id
  """
@@ -256,3 +252,75 @@ Example result body:
 ```
 
 <hr>
+
+### Driver gets last order
+
+1. URL: `GET /api/driver/order/latest/?access_token={{access_token}}`
+2. Output: Return confirmation that the order was picked
+3. Authentication required: Yes
+
+Example variables included in query parameters:
+
+```javascript
+ """
+        form params:
+            access_token
+            order_id
+ """
+```
+
+Example result body:
+
+```javascript
+{
+    "order": {
+        "id": 4,
+        "customer": {
+            "id": 1,
+            "name": "Halley Berry",
+            "avatar": "https://graph.facebook.com/alksh29037/picture?type=large",
+            "phone": "",
+            "address": ""
+        },
+        "restaurant": {
+            "id": 1,
+            "name": "Chicken Licken",
+            "phone": "123456789",
+            "address": "Randburg, Johannesburg"
+        },
+        "driver": {
+            "id": 1,
+            "name": "Ghost Rider",
+            "avatar": "https://graph.facebook.com/adjdh286/picture?type=large",
+            "phone": "",
+            "address": ""
+        },
+        "order_details": [
+            {
+                "id": 4,
+                "meal": {
+                    "id": 1,
+                    "name": "Hot Wings",
+                    "price": 36
+                },
+                "quantity": 2,
+                "sub_total": 72
+            },
+            {
+                "id": 5,
+                "meal": {
+                    "id": 2,
+                    "name": "Big John Burger",
+                    "price": 37
+                },
+                "quantity": 3,
+                "sub_total": 111
+            }
+        ],
+        "total": 183,
+        "status": "On the way",
+        "address": "Umbrella Crossing Tokyo"
+    }
+}
+
+```
