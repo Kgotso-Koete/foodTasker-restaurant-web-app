@@ -211,6 +211,79 @@
 				}
 			],
 			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Driver API",
+			"item": [
+				{
+					"name": "Orders ready for collection",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{APIURL}}/driver/orders/ready/",
+							"host": [
+								"{{APIURL}}"
+							],
+							"path": [
+								"driver",
+								"orders",
+								"ready",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Driver choose order for delivery",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "access_token",
+									"value": "{{access_token}}",
+									"type": "text"
+								},
+								{
+									"key": "order_id",
+									"value": "6",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{APIURL}}/driver/order/pick/?",
+							"host": [
+								"{{APIURL}}"
+							],
+							"path": [
+								"driver",
+								"order",
+								"pick",
+								""
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
 		}
 	],
 	"protocolProfileBehavior": {}

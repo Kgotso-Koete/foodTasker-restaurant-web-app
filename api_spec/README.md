@@ -10,7 +10,7 @@
 2. Output: Return a list of restaurants to the customer
 3. Authentication required: No
 
-Example request body:
+Example result body:
 
 ```javascript
 {
@@ -48,7 +48,7 @@ Example request body:
 2. Output: Return a menu meals offered by each restaurant
 3. Authentication required: No
 
-Example request body:
+Example result body:
 
 ```javascript
 {
@@ -93,7 +93,7 @@ Example variables included in a form:
     """
 ```
 
-Example request body:
+Example result body:
 
 ```javascript
  {"status": "success"}
@@ -116,7 +116,7 @@ Example variables included in query parameters:
     """
 ```
 
-Example request body:
+Example result body:
 
 ```javascript
 {
@@ -171,13 +171,13 @@ Example request body:
 
 ### Driver APIs
 
-### Driver gets a list of orders that are ready and dont have driver assigned
+### Driver gets a list of orders that are ready and don't have driver assigned
 
 1. URL: `GET /api/driver/orders/ready/`
 2. Output: Return a list of orders ready for driver assignment
 3. Authentication required: No
 
-Example request body:
+Example result body:
 
 ```javascript
 {
@@ -226,6 +226,33 @@ Example request body:
         }
     ]
 }
+```
+
+<hr>
+
+### Driver chooses order to deliver
+
+1. URL: `POST /api/driver/orders/ready/`
+2. Output: Return confirmation that the order was picked
+3. Authentication required: Yes
+
+Example variables included in query parameters:
+
+```javascript
+ """
+        form body params:
+            access_token
+            order_id
+ """
+```
+
+Example result body:
+
+```javascript
+{
+    "status": "success"
+}
+
 ```
 
 <hr>
