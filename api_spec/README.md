@@ -324,3 +324,30 @@ Example result body:
 }
 
 ```
+
+### Driver marks order as delivered
+
+1. URL: `POST /api/driver/order/complete/`
+2. Output: Return confirmation that the order was delivered
+3. Authentication required: Yes
+
+Example variables included in query parameters:
+
+```javascript
+ """
+        form params:
+            access_token
+            order_id
+ """
+```
+
+Example result body:
+
+```javascript
+{
+    "status": "success"
+}
+
+```
+
+<hr>
