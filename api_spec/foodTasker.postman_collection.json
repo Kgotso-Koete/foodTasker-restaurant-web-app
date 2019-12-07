@@ -281,6 +281,104 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Latest order",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{APIURL}}/driver/order/latest/?access_token={{access_token}}",
+							"host": [
+								"{{APIURL}}"
+							],
+							"path": [
+								"driver",
+								"order",
+								"latest",
+								""
+							],
+							"query": [
+								{
+									"key": "access_token",
+									"value": "{{access_token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mark order as delivered",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "access_token",
+									"value": "{{access_token}}",
+									"type": "text"
+								},
+								{
+									"key": "order_id",
+									"value": "4",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{APIURL}}/driver/order/complete/?",
+							"host": [
+								"{{APIURL}}"
+							],
+							"path": [
+								"driver",
+								"order",
+								"complete",
+								""
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Driver revenue this week",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{APIURL}}/driver/revenue/?access_token={{access_token}}",
+							"host": [
+								"{{APIURL}}"
+							],
+							"path": [
+								"driver",
+								"revenue",
+								""
+							],
+							"query": [
+								{
+									"key": "access_token",
+									"value": "{{access_token}}"
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"protocolProfileBehavior": {}

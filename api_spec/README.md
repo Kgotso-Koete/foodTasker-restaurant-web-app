@@ -81,7 +81,7 @@ Example variables included in a form:
 
 ```javascript
  """
-        form params:
+        request form params:
             access_token
             restaurant_id
             address
@@ -109,7 +109,7 @@ Example variables included in query parameters:
 
 ```javascript
  """
-        params:
+        URL params:
             access_token
     """
 ```
@@ -236,7 +236,7 @@ Example variables included in query parameters:
 
 ```javascript
  """
-        form params:
+        request form params:
             access_token
             order_id
  """
@@ -263,7 +263,7 @@ Example variables included in query parameters:
 
 ```javascript
  """
-        form params:
+        URL params:
             access_token
             order_id
  """
@@ -335,7 +335,7 @@ Example variables included in query parameters:
 
 ```javascript
  """
-        form params:
+        request form params:
             access_token
             order_id
  """
@@ -346,6 +346,40 @@ Example result body:
 ```javascript
 {
     "status": "success"
+}
+
+```
+
+<hr>
+
+### Get Driver revenue
+
+1. URL: `GET /api/driver/revenue/?access_token={{access_token}}`
+2. Output: Return Driver's revenue for the week
+3. Authentication required: Yes
+
+Example variables included in query parameters:
+
+```javascript
+ """
+        URL params:
+            access_token
+ """
+```
+
+Example result body:
+
+```javascript
+{
+    "revenue": {
+        "Mon": 0,
+        "Tue": 0,
+        "Wed": 0,
+        "Thu": 0,
+        "Fri": 0,
+        "Sat": 366,
+        "Sun": 0
+    }
 }
 
 ```
