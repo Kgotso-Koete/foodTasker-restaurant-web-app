@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
 
+
 # Create your models here.
 class Restaurant(models.Model):
     user = models.OneToOneField(User,
@@ -66,12 +67,12 @@ class Order(models.Model):
 
     customer = models.ForeignKey(Customer)
     restaurant = models.ForeignKey(Restaurant)
-    driver = models.ForeignKey(Driver)
+    driver = models.ForeignKey(Driver, blank=True, null=True)  # can be blank
     address = models.CharField(max_length=500)
     total = models.IntegerField()
-    status = models.IntegerField(choices = STATUS_CHOICES)
-    created_at = models.DateTimeField(default = timezone.now)
-    picked_at = models.DateTimeField(blank = True, null = True)
+    status = models.IntegerField(choices=STATUS_CHOICES)
+    created_at = models.DateTimeField(default=timezone.now)
+    picked_at = models.DateTimeField(blank=True, null=True)
 
     def __str__(self):
         return str(self.id)
@@ -84,4 +85,4 @@ class OrderDetails(models.Model):
     sub_total = models.IntegerField()
 
     def __str__(self):
-        return str(self.id) 
+        return str(self.id)

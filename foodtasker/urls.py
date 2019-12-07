@@ -50,6 +50,6 @@ urlpatterns = [
     url(r'^api/customer/restaurants/$', apis.customer_get_restaurants),
     url(r'^api/customer/meals/(?P<restaurant_id>\d+)/$',
         apis.customer_get_meals),
-    #url(r'^api/customer/order/add/$', apis.customer_add_order),
+    url(r'^api/customer/order/add/$', apis.customer_add_order),
     #url(r'^api/customer/order/latest/$', apis.customer_get_latest_order),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

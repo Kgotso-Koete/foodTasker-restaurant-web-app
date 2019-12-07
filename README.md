@@ -3,15 +3,17 @@
 Foodtasker is an UberEats clone in which customers can order takeaway food on through the customer mobile app, restaurants can accept and track orders
 </br>
 
-</hr>
 # Click here for the [demo](https://arcane-spire-07518.herokuapp.com/restaurant/)
-</hr>
+
+---
 
 ### Technology stack
 
 Python Django and Bootstrap 3
 </br>
 </br>
+
+---
 
 ### Application overview
 
@@ -32,7 +34,9 @@ This code is for the back end and web based administration site for restaurant e
 
 [Code4Startup](https://code4startup.com/) tutorial on building an UberEats clone based on the [foodTasker app tutorial](https://code4startup.com/).
 
-## Description and features
+---
+
+### Description and features
 
 ### General functionality
 
@@ -59,7 +63,9 @@ This code is for the back end and web based administration site for restaurant e
   - Edit meals after clicking on a meal name (URL: `api_baseURL/restaurant/meal/edit/`)
 - Report page where restaurants can view revenue and other statistics (URL: `api_baseURL/restaurant/report/`)
 
-## How to run the code:
+---
+
+### How to run the code
 
 The back end API is deployed on Heroku, and the front end is deployed on ??. Here is the [demo](), and here is the production api link `https://arcane-spire-07518.herokuapp.com/` that can be used with any front end for requests
 
@@ -82,7 +88,9 @@ Run `python manage.py runserver`
 
 Open up `http://localhost:8000/` in your browser
 
-## Application Structure
+---
+
+### Application Structure
 
 - `foodtasker/` where key settings are specified
   - `settings/` where all the key settings have been specified
@@ -96,28 +104,36 @@ Open up `http://localhost:8000/` in your browser
   - `requirements.txt` specify all packages/dependencies to be downloaded before running the application
 - `db.sqlite3` database
 
-## Authentication
+---
+
+### Authentication
 
 Requests are authenticated using the `Authorization` header with a valid JWT. Authentication is handled by djangoauth and django-rest-framework-social-oauth2
 
-## Timesheet log
+---
+
+### Timesheet log
 
 - Back end
 
   - Version 1 (Code4Startup Tutorial): x hours
   - Version 2 (personal modifications): x hours
 
-## Acknowledgements
+---
+
+### Acknowledgements
 
 Special thanks to Leo Trieu's [Code4Startup](https://code4startup.com/projects) for a great tutorial. I had been looking for a tutorial for a real world 2 sided market application with geo-location features and I found one with thanks to Code4Startup. We need more of this kind of tutorial and less of 'Foo Bar'.
 <br/>
 <br/>
 
-## License
+---
+
+### License
 
 The codebase is MIT licensed unless otherwise specified.
 
-#
+---
 
 To be modified further by Kgotso Koete
 <br/>
