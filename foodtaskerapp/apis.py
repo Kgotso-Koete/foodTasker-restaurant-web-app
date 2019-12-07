@@ -6,7 +6,7 @@ from django.views.decorators.csrf import csrf_exempt
 from oauth2_provider.models import AccessToken
 
 from foodtaskerapp.models import Restaurant, Meal, Order, OrderDetails
-from foodtaskerapp.serializers import RestaurantSerializer, MealSerializer
+from foodtaskerapp.serializers import RestaurantSerializer, MealSerializer, OrderSerializer
 
 
 def customer_get_restaurants(request):
@@ -100,8 +100,14 @@ def customer_add_order(request):
 
 
 def customer_get_latest_order(request):
+    access_token = AccessToken.objects.get(
+        token=request.GET.get("access_token"), expires__gt=timezone.now())
 
-    return JsonResponse({})
+    customer = access_token.user.customer
+    order = OrderSerializer(
+        Order.objects.filter(customer=customer).last()).data
+
+    return JsonResponse({"order": order})
 
 
 # get a list of order notifications made AFTER last_request_time for restaurant

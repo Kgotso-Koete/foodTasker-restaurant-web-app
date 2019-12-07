@@ -182,6 +182,32 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Get last order",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{APIURL}}/customer/order/latest/?access_token={{access_token}}",
+							"host": [
+								"{{APIURL}}"
+							],
+							"path": [
+								"customer",
+								"order",
+								"latest",
+								""
+							],
+							"query": [
+								{
+									"key": "access_token",
+									"value": "{{access_token}}"
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"protocolProfileBehavior": {}

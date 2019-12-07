@@ -10,9 +10,7 @@ Foodtasker is an UberEats clone in which customers can order takeaway food on th
 
 ### Technology stack
 
-Python Django and Bootstrap 3
-</br>
-</br>
+Python Django, SQLite 3 and Bootstrap 3
 
 ---
 
@@ -29,7 +27,7 @@ The combined application consists of 4 components:
 
 ### What this code base covers
 
-This code is for the back end and web based administration site for restaurant employees. [here is the tutorial](https://coderealprojects.com/projects/create-ubereats-api-server-side-with-python).
+This code is for the back end which includes databases and APIs, and web based administration site for restaurant employees. [here is the tutorial](https://coderealprojects.com/projects/create-ubereats-api-server-side-with-python).
 
 ---
 
@@ -127,8 +125,6 @@ Requests are authenticated using the `Authorization` header with a valid JWT. Au
 ### Acknowledgements
 
 Special thanks to Leo Trieu's [Code4Startup](https://code4startup.com/projects) for a great tutorial. I had been looking for a tutorial for a real world 2 sided market application with geo-location features and I found one with thanks to Code4Startup. We need more of this kind of tutorial and less of 'Foo Bar'.
-<br/>
-<br/>
 
 ---
 
@@ -140,4 +136,4 @@ The codebase is MIT licensed unless otherwise specified.
 
 To be modified further by Kgotso Koete
 <br/>
-Johannesburg, December 2019
+Johannesburg, South Africa
