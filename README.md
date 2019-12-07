@@ -14,7 +14,7 @@ Python Django, SQLite 3 and Bootstrap 3
 
 ---
 
-### Application overview
+### Application overview and link to related code bases
 
 The combined application consists of 4 components:
 
@@ -27,13 +27,13 @@ The combined application consists of 4 components:
 
 ### What this code base covers
 
-This code is for the back end which includes databases and APIs, and web based administration site for restaurant employees. [here is the tutorial](https://coderealprojects.com/projects/create-ubereats-api-server-side-with-python).
+This code is for the back end which includes databases and APIs, and web based administration site for restaurant employees.
 
 ---
 
 ### Tutorial used
 
-[Code4Startup](https://code4startup.com/) tutorial on building an UberEats clone based on the [foodTasker app tutorial](https://code4startup.com/).
+[Code4Startup](https://code4startup.com/) tutorial on building an UberEats clone based on the [foodTasker app tutorial](https://coderealprojects.com/projects/create-ubereats-api-server-side-with-python).
 
 ---
 
