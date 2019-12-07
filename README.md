@@ -1,9 +1,10 @@
 # About the project
 
 Foodtasker is an UberEats clone in which customers can order takeaway food on through the customer mobile app, restaurants can accept and track orders
-</br>
 
-# Click here for the [demo](https://arcane-spire-07518.herokuapp.com/restaurant/)
+---
+
+### Click here for the [demo](https://arcane-spire-07518.herokuapp.com/restaurant/)
 
 ---
 
@@ -23,12 +24,14 @@ The combined application consists of 4 components:
 2. Restaurant Front-end (part of this code base): A web-based administrative front-end for restaurant employees to manage orders
 3. Customer Front-end [separate repository](): An android mobile app for customers to use to place and pay for orders
 4. Driver Front-end [separate repository](): An android mobile app for drivers to use to accept and deliver orders
-   </br>
-   </br>
+
+---
 
 ### What this code base covers
 
 This code is for the back end and web based administration site for restaurant employees. [here is the tutorial](https://coderealprojects.com/projects/create-ubereats-api-server-side-with-python).
+
+---
 
 ### Tutorial used
 

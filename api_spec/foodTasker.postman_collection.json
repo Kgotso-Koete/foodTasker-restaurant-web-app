@@ -1,0 +1,191 @@
+{
+	"info": {
+		"_postman_id": "f62f8979-782b-436c-93b8-137d1adef0fe",
+		"name": "foodTasker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authorization",
+			"item": [
+				{
+					"name": "convert-social-token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{APIURL}}/social/convert-token?grant_type=convert_token&client_id=WReZglb8s7nxtOOrPuLmS9YBKwKrlQxwBZzIZVzw&client_secret=QN3PrQqFbLuRwi4txSPwmurMlECpmpU3RgJaB88U3hEhXteBdEkDsadlr46SWZiUe4BeXZ2KdFb9DewHM8YJm2StKkLvV6b9mX1P5oDb9Rrc1CN4EGXcSo4nRLMqY62g&backend=facebook&token=EAAk9QjYwpQkBANGQoYjKfKSZBYjWZA0CZBihJXJAwA1fHjR5NUNXoaMm9wPrDW9Qa3YrYTqgNASjCPfVXHvWcBDfhzJoMBIifTiMBmOPVMwR2c97IjWSoShGTQMY0Vmzak0orbxjSZA1NTKHKQS0RxNB3x0eLjb2TcYFKA8kYs5WvYCo5ZAauetHQq3NN2YTfWerb0gpbJtjI0hpZAwJ5yjZCCUHRBAiVntsvD0WglhoAEDPraZA4ZAGN&user_type=customer",
+							"host": [
+								"{{APIURL}}"
+							],
+							"path": [
+								"social",
+								"convert-token"
+							],
+							"query": [
+								{
+									"key": "grant_type",
+									"value": "convert_token"
+								},
+								{
+									"key": "client_id",
+									"value": "WReZglb8s7nxtOOrPuLmS9YBKwKrlQxwBZzIZVzw"
+								},
+								{
+									"key": "client_secret",
+									"value": "QN3PrQqFbLuRwi4txSPwmurMlECpmpU3RgJaB88U3hEhXteBdEkDsadlr46SWZiUe4BeXZ2KdFb9DewHM8YJm2StKkLvV6b9mX1P5oDb9Rrc1CN4EGXcSo4nRLMqY62g"
+								},
+								{
+									"key": "backend",
+									"value": "facebook"
+								},
+								{
+									"key": "token",
+									"value": "EAAk9QjYwpQkBANGQoYjKfKSZBYjWZA0CZBihJXJAwA1fHjR5NUNXoaMm9wPrDW9Qa3YrYTqgNASjCPfVXHvWcBDfhzJoMBIifTiMBmOPVMwR2c97IjWSoShGTQMY0Vmzak0orbxjSZA1NTKHKQS0RxNB3x0eLjb2TcYFKA8kYs5WvYCo5ZAauetHQq3NN2YTfWerb0gpbJtjI0hpZAwJ5yjZCCUHRBAiVntsvD0WglhoAEDPraZA4ZAGN"
+								},
+								{
+									"key": "user_type",
+									"value": "customer"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "revoke-social-token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{APIURL}}/social/revoke-token?client_id=WReZglb8s7nxtOOrPuLmS9YBKwKrlQxwBZzIZVzw&client_secret=QN3PrQqFbLuRwi4txSPwmurMlECpmpU3RgJaB88U3hEhXteBdEkDsadlr46SWZiUe4BeXZ2KdFb9DewHM8YJm2StKkLvV6b9mX1P5oDb9Rrc1CN4EGXcSo4nRLMqY62g&token=vmVi2qbzkCRiO7Iylsnw7MBOTCz16p",
+							"host": [
+								"{{APIURL}}"
+							],
+							"path": [
+								"social",
+								"revoke-token"
+							],
+							"query": [
+								{
+									"key": "grant_type",
+									"value": "convert_token",
+									"disabled": true
+								},
+								{
+									"key": "client_id",
+									"value": "WReZglb8s7nxtOOrPuLmS9YBKwKrlQxwBZzIZVzw"
+								},
+								{
+									"key": "client_secret",
+									"value": "QN3PrQqFbLuRwi4txSPwmurMlECpmpU3RgJaB88U3hEhXteBdEkDsadlr46SWZiUe4BeXZ2KdFb9DewHM8YJm2StKkLvV6b9mX1P5oDb9Rrc1CN4EGXcSo4nRLMqY62g"
+								},
+								{
+									"key": "backend",
+									"value": "facebook",
+									"disabled": true
+								},
+								{
+									"key": "token",
+									"value": "vmVi2qbzkCRiO7Iylsnw7MBOTCz16p"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Customer API",
+			"item": [
+				{
+					"name": "Get restaurant list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{APIURL}}/customer/restaurants/",
+							"host": [
+								"{{APIURL}}"
+							],
+							"path": [
+								"customer",
+								"restaurants",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get restaurant menu",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{APIURL}}/customer/meals/1",
+							"host": [
+								"{{APIURL}}"
+							],
+							"path": [
+								"customer",
+								"meals",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "access_token",
+									"value": "{{access_token}}",
+									"type": "text"
+								},
+								{
+									"key": "restaurant_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "Umbrella Crossing Tokyo",
+									"type": "text"
+								},
+								{
+									"key": "order_details",
+									"value": "[{\"meal_id\": 1, \"quantity\": 2},{\"meal_id\": 2, \"quantity\": 3}]",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{APIURL}}/customer/order/add/",
+							"host": [
+								"{{APIURL}}"
+							],
+							"path": [
+								"customer",
+								"order",
+								"add",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

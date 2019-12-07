@@ -104,6 +104,10 @@ def customer_get_latest_order(request):
     return JsonResponse({})
 
 
+# get a list of order notifications made AFTER last_request_time for restaurant
 def restaurant_order_notification(request, last_request_time):
+    notification = Order.objects.filter(
+        restaurant=request.user.restaurant,
+        created_at__gt=last_request_time).count()
 
-    return JsonResponse({})
+    return JsonResponse({"notification": notification})
