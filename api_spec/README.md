@@ -165,6 +165,31 @@ Example result body:
 
 <hr>
 
+### Get driver location
+
+1. URL: `GET /api/customer/driver/location/?access_token={{access_token}}`
+2. Output: Return Driver's location
+3. Authentication required: Yes
+
+Example variables included in query parameters:
+
+```javascript
+ """
+        URL params:
+            access_token
+ """
+```
+
+Example result body:
+
+```javascript
+{
+    "location": "412121,542141"
+}
+```
+
+<hr>
+
 ### Driver APIs
 
 ### Driver gets a list of orders that are ready and don't have driver assigned
@@ -380,6 +405,33 @@ Example result body:
         "Sat": 366,
         "Sun": 0
     }
+}
+
+```
+
+<hr>
+
+### Save Driver location database
+
+1. URL: `POST /api/driver/location/update/`
+2. Output: Return confirmation that the location was saved in the database
+3. Authentication required: Yes
+
+Example variables included in query parameters:
+
+```javascript
+ """
+        request form params:
+            access_token
+            location
+ """
+```
+
+Example result body:
+
+```javascript
+{
+    "status": "success"
 }
 
 ```
