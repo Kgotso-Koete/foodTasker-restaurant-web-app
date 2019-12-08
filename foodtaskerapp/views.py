@@ -2,8 +2,10 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from foodtaskerapp.forms import UserForm, RestaurantForm, UserFormForEdit, MealForm
 from django.contrib.auth import authenticate, login
+
 from django.contrib.auth.models import User
-from foodtaskerapp.models import Meal, Order
+from foodtaskerapp.models import Meal, Order, Driver
+from django.db.models import Sum, Count, Case, When
 
 
 # Create your views here.
@@ -121,12 +123,23 @@ def restaurant_report(request):
         revenue.append(sum(order.total for order in delivered_orders))
         orders.append(delivered_orders.count())
 
+    # Top 3 Meals
+    top3_meals = Meal.objects.filter(restaurant = request.user.restaurant)\
+                     .annotate(total_order = Sum('orderdetails__quantity'))\
+                     .order_by("-total_order")[:3]
+
+    meal = {
+        "labels": [meal.name for meal in top3_meals],
+        "data": [meal.total_order or 0 for meal in top3_meals]
+    }
+
     return render(request, 'restaurant/report.html', {
         "revenue": revenue,
-        "orders": orders
+        "orders": orders,
+        "meal": meal
     })
 
- 
+
 def restaurant_sign_up(request):
     user_form = UserForm()
     restaurant_form = RestaurantForm()
