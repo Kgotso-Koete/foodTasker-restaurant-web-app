@@ -10,5 +10,6 @@
     "cSpell.ignoreWords": [
         "id",
         "order"
-    ]
+    ],
+    "editor.formatOnSave": true
 }
