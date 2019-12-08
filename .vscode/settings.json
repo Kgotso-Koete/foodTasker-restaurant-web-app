@@ -7,7 +7,6 @@
     "powermode.enabled": true,
     "powermode.comboThreshold": 5,
     "powermode.presets": "flames",
-    "editor.formatOnSave": true,
     "cSpell.ignoreWords": [
         "id",
         "order"

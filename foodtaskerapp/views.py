@@ -55,35 +55,39 @@ def restaurant_add_meal(request):
 
 @login_required(login_url='/restaurant/sign-in/')
 def restaurant_meal(request):
-    meals = Meal.objects.filter(restaurant = request.user.restaurant).order_by("-id")
+    meals = Meal.objects.filter(
+        restaurant=request.user.restaurant).order_by("-id")
     return render(request, 'restaurant/meal.html', {"meals": meals})
+
 
 @login_required(login_url='/restaurant/sign-in/')
 def restaurant_edit_meal(request, meal_id):
-    form = MealForm(instance = Meal.objects.get(id = meal_id))
+    form = MealForm(instance=Meal.objects.get(id=meal_id))
 
     if request.method == "POST":
-        form = MealForm(request.POST, request.FILES, instance = Meal.objects.get(id = meal_id))
+        form = MealForm(request.POST,
+                        request.FILES,
+                        instance=Meal.objects.get(id=meal_id))
 
         if form.is_valid():
             form.save()
             return redirect(restaurant_meal)
 
-    return render(request, 'restaurant/edit_meal.html', {
-        "form": form
-    })
+    return render(request, 'restaurant/edit_meal.html', {"form": form})
 
 
 @login_required(login_url='/restaurant/sign-in/')
 def restaurant_order(request):
     if request.method == "POST":
-        order = Order.objects.get(id = request.POST["id"], restaurant = request.user.restaurant)
+        order = Order.objects.get(id=request.POST["id"],
+                                  restaurant=request.user.restaurant)
 
         if order.status == Order.COOKING:
             order.status = Order.READY
             order.save()
 
-    orders = Order.objects.filter(restaurant = request.user.restaurant).order_by("-id")
+    orders = Order.objects.filter(
+        restaurant=request.user.restaurant).order_by("-id")
     return render(request, 'restaurant/order.html', {"orders": orders})
 
 
@@ -92,6 +96,37 @@ def restaurant_report(request):
     return render(request, 'restaurant/report.html', {})
 
 
+@login_required(login_url='/restaurant/sign-in/')
+def restaurant_report(request):
+    # Calculate revenue and number of order by current week
+    from datetime import datetime, timedelta
+
+    revenue = []
+    orders = []
+
+    # Calculate weekdays
+    today = datetime.now()
+    current_weekdays = [
+        today + timedelta(days=i)
+        for i in range(0 - today.weekday(), 7 - today.weekday())
+    ]
+
+    for day in current_weekdays:
+        delivered_orders = Order.objects.filter(
+            restaurant=request.user.restaurant,
+            status=Order.DELIVERED,
+            created_at__year=day.year,
+            created_at__month=day.month,
+            created_at__day=day.day)
+        revenue.append(sum(order.total for order in delivered_orders))
+        orders.append(delivered_orders.count())
+
+    return render(request, 'restaurant/report.html', {
+        "revenue": revenue,
+        "orders": orders
+    })
+
+ 
 def restaurant_sign_up(request):
     user_form = UserForm()
     restaurant_form = RestaurantForm()
@@ -117,5 +152,3 @@ def restaurant_sign_up(request):
         "user_form": user_form,
         "restaurant_form": restaurant_form
     })
-
-   
