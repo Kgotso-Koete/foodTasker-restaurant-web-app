@@ -158,12 +158,17 @@
 								},
 								{
 									"key": "address",
-									"value": "Umbrella Crossing Tokyo",
+									"value": "Banana Island Lagos",
 									"type": "text"
 								},
 								{
 									"key": "order_details",
-									"value": "[{\"meal_id\": 1, \"quantity\": 2},{\"meal_id\": 2, \"quantity\": 3}]",
+									"value": "[{\"meal_id\": 1, \"quantity\": 1},{\"meal_id\": 2, \"quantity\": 0}]",
+									"type": "text"
+								},
+								{
+									"key": "stripe_token",
+									"value": "{{stripe_token}}",
 									"type": "text"
 								}
 							]
@@ -197,6 +202,32 @@
 								"customer",
 								"order",
 								"latest",
+								""
+							],
+							"query": [
+								{
+									"key": "access_token",
+									"value": "{{access_token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get driver location",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{APIURL}}/customer/driver/location/?access_token={{access_token}}",
+							"host": [
+								"{{APIURL}}"
+							],
+							"path": [
+								"customer",
+								"driver",
+								"location",
 								""
 							],
 							"query": [
@@ -374,6 +405,53 @@
 								{
 									"key": "access_token",
 									"value": "{{access_token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save driver location",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "access_token",
+									"value": "{{access_token}}",
+									"type": "text"
+								},
+								{
+									"key": "order_id",
+									"value": "4",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{APIURL}}/driver/order/complete/?",
+							"host": [
+								"{{APIURL}}"
+							],
+							"path": [
+								"driver",
+								"order",
+								"complete",
+								""
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
 								}
 							]
 						}

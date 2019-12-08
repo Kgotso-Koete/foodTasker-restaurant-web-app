@@ -16,6 +16,7 @@ from dotenv import load_dotenv
 load_dotenv()
 FACEBOOK_APP_ID = os.getenv("FACEBOOK_APP_ID")
 FACEBOOK_APP_SECRET = os.getenv("FACEBOOK_APP_SECRET")
+STRIPE_API_KEY_ = os.getenv("STRIPE_API_KEY")
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -34,17 +35,11 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'foodtaskerapp',
-    'oauth2_provider',
-    'social.apps.django_app.default',
-    'rest_framework_social_oauth2',
-    'bootstrap3'
+    'django.contrib.admin', 'django.contrib.auth',
+    'django.contrib.contenttypes', 'django.contrib.sessions',
+    'django.contrib.messages', 'django.contrib.staticfiles', 'foodtaskerapp',
+    'oauth2_provider', 'social.apps.django_app.default',
+    'rest_framework_social_oauth2', 'bootstrap3'
 ]
 
 MIDDLEWARE = [
@@ -166,3 +161,5 @@ SOCIAL_AUTH_PIPELINE = (
     'social.pipeline.social_auth.load_extra_data',
     'social.pipeline.user.user_details',
 )
+
+STRIPE_API_KEY = STRIPE_API_KEY_

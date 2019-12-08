@@ -10,7 +10,7 @@ Foodtasker is an UberEats clone in which customers can order takeaway food on th
 
 ### Technology stack
 
-Python Django, SQLite 3 and Bootstrap 3
+Python Django, SQLite 3, Bootstrap 3 and Strip for payments
 
 ---
 
@@ -113,11 +113,17 @@ Requests are authenticated using the `Authorization` header with a valid JWT. Au
 
 ---
 
+### Payments
+
+Stripe payment API was used (using test keys and test tokens)
+
+---
+
 ### Timesheet log
 
 - Back end
 
-  - Version 1 (Code4Startup Tutorial): x hours
+  - Version 1 (Code4Startup Tutorial): 31 hours
   - Version 2 (personal modifications): x hours
 
 ---

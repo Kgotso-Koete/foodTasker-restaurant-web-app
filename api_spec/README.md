@@ -436,4 +436,26 @@ Example result body:
 
 ```
 
+# External API's
+
+### Stripe payment API
+
+Example variables included in query parameters:
+
+```javascript
+ """
+        request form params:
+            stripe token_token
+ """
+```
+
+Example result body:
+
+```javascript
+{
+    "status": "success"
+}
+
+```
+
 <hr>
