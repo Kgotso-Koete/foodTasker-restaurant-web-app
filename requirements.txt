@@ -21,4 +21,4 @@ social-auth-core==0.2.1
 stripe==1.37.0
 whitenoise==3.2.1
 python-dotenv==0.10.3 
-psycopg2==2.7.2
+psycopg2==2.7.3.2 
