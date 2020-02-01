@@ -35,8 +35,8 @@ INSTALLED_APPS = [
     'django.contrib.admin', 'django.contrib.auth',
     'django.contrib.contenttypes', 'django.contrib.sessions',
     'django.contrib.messages', 'django.contrib.staticfiles', 'foodtaskerapp',
-    'rest_framework', 'oauth2_provider', 'social.apps.django_app.default',
-    'rest_framework_social_oauth2', 'bootstrap3'
+    'rest_framework_social_oauth2', 'oauth2_provider',
+    'social.apps.django_app.default', 'bootstrap3'
 ]
 
 MIDDLEWARE = [
