@@ -68,7 +68,7 @@ This code is for the back end which includes databases and APIs, and web based a
 
 ### How to run the code
 
-The back end API is deployed on Heroku, and the front end is deployed on ??. Here is the [demo](), and here is the production api link `https://arcane-spire-07518.herokuapp.com/` that can be used with any front end for requests
+The back end API is deployed on Heroku, and the front end is deployed on ??. Here is the [demo](https://arcane-spire-07518.herokuapp.com/restaurant/), and here is the production api link `https://arcane-spire-07518.herokuapp.com/` that can be used with any front end for requests
 
 ### 1: Create virtual environment
 
