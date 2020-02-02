@@ -10,7 +10,7 @@ Foodtasker is an UberEats clone in which customers can order takeaway food on th
 
 ### Technology stack
 
-Python Django, SQLite 3, Bootstrap 3 and Strip for payments
+Python Django, SQLite 3, Bootstrap 3 and Stripe for payments
 
 ---
 
@@ -20,8 +20,8 @@ The combined application consists of 4 components:
 
 1. Back-end (part of this code base): A back end that handles CRUD operations with an api specified in the `api_spec folder`.
 2. Restaurant Front-end (part of this code base): A web-based administrative front-end for restaurant employees to manage orders
-3. Customer Front-end [separate repository](): An android mobile app for customers to use to place and pay for orders
-4. Driver Front-end [separate repository](): An android mobile app for drivers to use to accept and deliver orders
+3. Customer Front-end [separate repository](https://github.com/Kgotso-Koete/foodTasker-customer-driver-mobile-app): An android mobile app for customers to use to place and pay for orders
+4. Driver Front-end [separate repository](https://github.com/Kgotso-Koete/foodTasker-customer-driver-mobile-app): An android mobile app for drivers to use to accept and deliver orders
 
 ---
 
