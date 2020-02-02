@@ -125,7 +125,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 LOGIN_REDIRECT_URL = '/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 import dj_database_url
@@ -161,10 +161,12 @@ SOCIAL_AUTH_PIPELINE = (
 
 STRIPE_API_KEY = STRIPE_API_KEY_
 
-# access keys
+# AWS S3 bucket : https://blog.theodo.com/2019/07/aws-s3-upload-django/
 
 AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID")
 AWS_SECRET_ACCESS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 AWS_STORAGE_BUCKET_NAME = os.getenv("AWS_STORAGE_BUCKET_NAME")
 AWS_S3_REGION_NAME = 'eu-central-1'
+MEDIA_URL = 'http://s3.eu-central-1.amazonaws.com/{!s}/'.format(
+    AWS_STORAGE_BUCKET_NAME)
