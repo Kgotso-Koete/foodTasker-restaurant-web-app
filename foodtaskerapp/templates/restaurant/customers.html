@@ -1,0 +1,40 @@
+{% extends 'restaurant/base.html' %}
+
+{% block page %}
+
+    <div class="panel">
+        <div class="panel-heading bg-blue">
+            <h4 class="panel-title text-center text-white">Customers</h4>
+        </div>
+        <div class="panel-body">
+            <br/>
+            <table class="table table-bordered table-hover table-striped">
+                <thead>
+                  <tr class="bg-gray text-white">
+                    <th>Id</th>
+                    <th>Customer avatar</th>
+                    <th>Customer name</th>
+                    <th>Customer address</th>
+                    <th>Num of Orders</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    {% for customer in all_customers %}
+                        <tr>
+                            <td scope="row">{{ customer.id }}</td>
+                            <td class="text-center">
+                                <img class="img-rounded" src="{{ customer.avatar }}" width="50" height="50">
+                            </td>
+                            <td>{{ customer.user }}</td>
+                            <td>{{ customer.address }}</td>
+                            <td>{{ customer.num_orders }}</td>
+                        </tr>
+                    {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+{% endblock %}
+  

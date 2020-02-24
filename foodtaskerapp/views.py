@@ -4,7 +4,7 @@ from foodtaskerapp.forms import UserForm, RestaurantForm, UserFormForEdit, MealF
 from django.contrib.auth import authenticate, login
 
 from django.contrib.auth.models import User
-from foodtaskerapp.models import Meal, Order, Driver
+from foodtaskerapp.models import Meal, Order, Driver, Customer
 from django.db.models import Sum, Count, Case, When
 
 
@@ -90,6 +90,7 @@ def restaurant_order(request):
 
     orders = Order.objects.filter(
         restaurant=request.user.restaurant).order_by("-id")
+    
     return render(request, 'restaurant/order.html', {"orders": orders})
 
 
@@ -176,3 +177,31 @@ def restaurant_sign_up(request):
         "user_form": user_form,
         "restaurant_form": restaurant_form
     })
+
+
+@login_required(login_url='/restaurant/sign-in/')
+def restaurant_customers(request):
+    
+    # get lis of all orders for restaurant
+    orders = Order.objects.filter(restaurant=request.user.restaurant).order_by("-id", )
+
+    # get list of all customers
+    customers = {}
+
+    # final list of customers
+    all_customers = []
+
+    for order in orders:
+            each_customer = order.customer
+            print(each_customer)
+            if each_customer.id not in customers.keys():
+                customers[each_customer.id] = each_customer
+                each_customer.num_orders = 1
+            else:
+                customers[each_customer.id].num_orders += 1
+     
+    # extract into a simple list to be displayed
+    for key, value in customers.items():
+        all_customers.append(value)
+  
+    return render(request, 'restaurant/customers.html', {"all_customers": all_customers})

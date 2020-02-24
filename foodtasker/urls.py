@@ -40,6 +40,9 @@ urlpatterns = [
     url(r'^restaurant/report/$',
         views.restaurant_report,
         name='restaurant-report'),
+    url(r'^restaurant/customers/$',
+        views.restaurant_customers,
+        name='restaurant-customers'),
 
     # Sign In/ Sign Up/ Sign Out
     url(r'^api/social/', include('rest_framework_social_oauth2.urls')),
