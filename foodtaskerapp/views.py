@@ -193,13 +193,14 @@ def restaurant_customers(request):
 
     for order in orders:
             each_customer = order.customer
-            print(each_customer)
-            if each_customer.id not in customers.keys():
-                customers[each_customer.id] = each_customer
-                each_customer.num_orders = 1
-            else:
-                customers[each_customer.id].num_orders += 1
-     
+            
+            if each_customer:
+                if each_customer.id not in customers.keys():
+                    customers[each_customer.id] = each_customer
+                    each_customer.num_orders = 1
+                else:
+                    customers[each_customer.id].num_orders += 1
+        
     # extract into a simple list to be displayed
     for key, value in customers.items():
         all_customers.append(value)
@@ -220,12 +221,13 @@ def restaurant_drivers(request):
 
     for order in orders:
             each_driver = order.driver
-            print(each_driver)
-            if each_driver.id not in drivers.keys():
-                drivers[each_driver.id] = each_driver
-                each_driver.num_orders = 1
-            else:
-                drivers[each_driver.id].num_orders += 1
+           
+            if each_driver:
+                if each_driver.id not in drivers.keys():
+                    drivers[each_driver.id] = each_driver
+                    each_driver.num_orders = 1
+                else:
+                    drivers[each_driver.id].num_orders += 1
      
     # extract into a simple list to be displayed
     for key, value in drivers.items():
