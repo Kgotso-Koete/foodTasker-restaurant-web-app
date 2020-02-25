@@ -1,0 +1,40 @@
+{% extends 'restaurant/base.html' %}
+
+{% block page %}
+
+    <div class="panel">
+        <div class="panel-heading bg-blue">
+            <h4 class="panel-title text-center text-white">Drivers</h4>
+        </div>
+        <div class="panel-body">
+            <br/>
+            <table class="table table-bordered table-hover table-striped">
+                <thead>
+                  <tr class="bg-gray text-white">
+                    <th>Id</th>
+                    <th>Driver avatar</th>
+                    <th>Driver name</th>
+                    <th>Driver address</th>
+                    <th>Num of Orders</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    {% for driver in all_drivers %}
+                        <tr>
+                            <td scope="row">{{ driver.id }}</td>
+                            <td class="text-center">
+                                <img class="img-rounded" src="{{ driver.avatar }}" width="50" height="50">
+                            </td>
+                            <td>{{ driver.user }}</td>
+                            <td>{{ driver.address }}</td>
+                            <td>{{ driver.num_orders }}</td>
+                        </tr>
+                    {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+{% endblock %}
+  

@@ -63,7 +63,9 @@ This code is for the back end which includes databases and APIs, and web based a
   - Add meals to the menu (URL: `api_baseURL/restaurant/meal/add`)
   - Edit meals after clicking on a meal name (URL: `api_baseURL/restaurant/meal/edit/`)
 - Report page where restaurants can view revenue and other statistics (URL: `api_baseURL/restaurant/report/`)
-
+- Customers page where restaurants can view customers by order volume (URL: `api_baseURL/restaurant/customers/`)
+- Drivers page where restaurants can view drivers by order volume (URL: `api_baseURL/restaurant/drivers/`)
+     
 ---
 
 ### How to run the code

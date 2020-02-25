@@ -205,3 +205,31 @@ def restaurant_customers(request):
         all_customers.append(value)
   
     return render(request, 'restaurant/customers.html', {"all_customers": all_customers})
+
+@login_required(login_url='/restaurant/sign-in/')
+def restaurant_drivers(request):
+    
+    # get lis of all orders for restaurant
+    orders = Order.objects.filter(restaurant=request.user.restaurant).order_by("-id", )
+
+    # get list of all customers
+    drivers = {}
+
+    # final list of customers
+    all_drivers = []
+
+    for order in orders:
+            each_driver = order.driver
+            print(each_driver)
+            if each_driver.id not in drivers.keys():
+                drivers[each_driver.id] = each_driver
+                each_driver.num_orders = 1
+            else:
+                drivers[each_driver.id].num_orders += 1
+     
+    # extract into a simple list to be displayed
+    for key, value in drivers.items():
+        all_drivers.append(value)
+  
+    return render(request, 'restaurant/drivers.html', {"all_drivers": all_drivers})
+ 

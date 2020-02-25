@@ -43,6 +43,9 @@ urlpatterns = [
     url(r'^restaurant/customers/$',
         views.restaurant_customers,
         name='restaurant-customers'),
+    url(r'^restaurant/drivers/$',
+        views.restaurant_drivers,
+        name='restaurant-drivers'),
 
     # Sign In/ Sign Up/ Sign Out
     url(r'^api/social/', include('rest_framework_social_oauth2.urls')),
@@ -69,4 +72,4 @@ urlpatterns = [
 
     # create static URL for media documents like photos
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
- 
+    
