@@ -61,6 +61,7 @@ urlpatterns = [
     url(r'^api/customer/order/add/$', apis.customer_add_order),
     url(r'^api/customer/order/latest/$', apis.customer_get_latest_order),
     url(r'^api/customer/driver/location/$', apis.customer_driver_location),
+    url(r'^api/customer/order/history/$', apis.customer_get_order_history),
 
     # APIs for DRIVERS
     url(r'^api/driver/orders/ready/$', apis.driver_get_ready_orders),
@@ -69,6 +70,7 @@ urlpatterns = [
     url(r'^api/driver/order/complete/$', apis.driver_complete_order),
     url(r'^api/driver/revenue/$', apis.driver_get_revenue),
     url(r'^api/driver/location/update/$', apis.driver_update_location),
+    url(r'^api/driver/order/history/$', apis.driver_get_order_history),
 
     # create static URL for media documents like photos
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

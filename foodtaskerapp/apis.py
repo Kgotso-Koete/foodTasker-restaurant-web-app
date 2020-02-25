@@ -148,6 +148,22 @@ def customer_driver_location(request):
     return JsonResponse({"location": location})
 
 
+# GET params: access_token
+def customer_get_order_history(request):
+    access_token = AccessToken.objects.get(
+        token=request.GET.get("access_token"), expires__gt=timezone.now())
+    customer = access_token.user.customer
+
+    order_history = OrderSerializer(Order.objects.filter(
+        customer=customer, status=Order.DELIVERED).order_by("picked_at"),
+                                    many=True,
+                                    context={
+                                        "request": request
+                                    }).data
+
+    return JsonResponse({"order_history": order_history})
+
+
 ####################################################
 # RESTAURANTS
 ####################################################
@@ -286,3 +302,19 @@ def driver_update_location(request):
         driver.save()
 
         return JsonResponse({"status": "Driver location successfully sent"})
+
+
+# GET params: access_token
+def driver_get_order_history(request):
+    access_token = AccessToken.objects.get(
+        token=request.GET.get("access_token"), expires__gt=timezone.now())
+    driver = access_token.user.driver
+
+    order_history = OrderSerializer(Order.objects.filter(
+        driver=driver, status=Order.DELIVERED).order_by("picked_at"),
+                                    many=True,
+                                    context={
+                                        "request": request
+                                    }).data
+
+    return JsonResponse({"order_history": order_history})
