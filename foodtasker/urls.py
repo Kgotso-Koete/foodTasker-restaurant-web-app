@@ -72,4 +72,3 @@ urlpatterns = [
 
     # create static URL for media documents like photos
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-    

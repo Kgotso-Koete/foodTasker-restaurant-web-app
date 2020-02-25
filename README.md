@@ -65,7 +65,7 @@ This code is for the back end which includes databases and APIs, and web based a
 - Report page where restaurants can view revenue and other statistics (URL: `api_baseURL/restaurant/report/`)
 - Customers page where restaurants can view customers by order volume (URL: `api_baseURL/restaurant/customers/`)
 - Drivers page where restaurants can view drivers by order volume (URL: `api_baseURL/restaurant/drivers/`)
-     
+
 ---
 
 ### How to run the code
@@ -126,7 +126,7 @@ Stripe payment API was used (using test keys and test tokens)
 - Back end
 
   - Version 1 (Code4Startup Tutorial): 31 hours
-  - Version 2 (personal modifications): 5 hours 
+  - Version 2 (personal modifications): 5 hours
 
 ---
 

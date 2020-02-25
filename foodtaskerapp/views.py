@@ -90,7 +90,7 @@ def restaurant_order(request):
 
     orders = Order.objects.filter(
         restaurant=request.user.restaurant).order_by("-id")
-    
+
     return render(request, 'restaurant/order.html', {"orders": orders})
 
 
@@ -148,19 +148,21 @@ def restaurant_report(request):
     top3_customers = Customer.objects.annotate(total_order=Count(
         Case(When(order__restaurant=request.user.restaurant,
                   then=1)))).order_by("-total_order")[:3]
-   
+
     customer = {
-        "labels": [customer.user.get_full_name() for customer in top3_customers],
+        "labels":
+        [customer.user.get_full_name() for customer in top3_customers],
         "data": [customer.total_order for customer in top3_customers]
     }
 
-    return render(request, 'restaurant/report.html', {
-        "revenue": revenue,
-        "orders": orders,
-        "meal": meal,
-        "driver": driver,
-        "customer": customer
-    })
+    return render(
+        request, 'restaurant/report.html', {
+            "revenue": revenue,
+            "orders": orders,
+            "meal": meal,
+            "driver": driver,
+            "customer": customer
+        })
 
 
 def restaurant_sign_up(request):
@@ -192,57 +194,27 @@ def restaurant_sign_up(request):
 
 @login_required(login_url='/restaurant/sign-in/')
 def restaurant_customers(request):
-    
-    # get lis of all orders for restaurant
-    orders = Order.objects.filter(restaurant=request.user.restaurant).order_by("-id", )
 
-    # get list of all customers
-    customers = {}
+    customers = Customer.objects.annotate(total_order=Count(
+        Case(When(order__restaurant=request.user.restaurant,
+                  then=1)))).order_by("-total_order")
 
-    # final list of customers
-    all_customers = []
+    all_customers = [
+        customer for customer in customers if customer.total_order > 0
+    ]
 
-    for order in orders:
-            each_customer = order.customer
-            
-            if each_customer:
-                if each_customer.id not in customers.keys():
-                    customers[each_customer.id] = each_customer
-                    each_customer.num_orders = 1
-                else:
-                    customers[each_customer.id].num_orders += 1
-        
-    # extract into a simple list to be displayed
-    for key, value in customers.items():
-        all_customers.append(value)
-  
-    return render(request, 'restaurant/customers.html', {"all_customers": all_customers})
+    return render(request, 'restaurant/customers.html',
+                  {"all_customers": all_customers})
+
 
 @login_required(login_url='/restaurant/sign-in/')
 def restaurant_drivers(request):
-    
-    # get lis of all orders for restaurant
-    orders = Order.objects.filter(restaurant=request.user.restaurant).order_by("-id", )
 
-    # get list of all customers
-    drivers = {}
+    drivers = Driver.objects.annotate(total_order=Count(
+        Case(When(order__restaurant=request.user.restaurant,
+                  then=1)))).order_by("-total_order")
 
-    # final list of customers
-    all_drivers = []
+    all_drivers = [driver for driver in drivers if driver.total_order > 0]
 
-    for order in orders:
-            each_driver = order.driver
-           
-            if each_driver:
-                if each_driver.id not in drivers.keys():
-                    drivers[each_driver.id] = each_driver
-                    each_driver.num_orders = 1
-                else:
-                    drivers[each_driver.id].num_orders += 1
-     
-    # extract into a simple list to be displayed
-    for key, value in drivers.items():
-        all_drivers.append(value)
-  
-    return render(request, 'restaurant/drivers.html', {"all_drivers": all_drivers})
- 
+    return render(request, 'restaurant/drivers.html',
+                  {"all_drivers": all_drivers})
