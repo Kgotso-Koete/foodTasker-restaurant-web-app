@@ -144,11 +144,22 @@ def restaurant_report(request):
         "data": [driver.total_order for driver in top3_drivers]
     }
 
+    # Top 3 Drivers
+    top3_customers = Customer.objects.annotate(total_order=Count(
+        Case(When(order__restaurant=request.user.restaurant,
+                  then=1)))).order_by("-total_order")[:3]
+   
+    customer = {
+        "labels": [customer.user.get_full_name() for customer in top3_customers],
+        "data": [customer.total_order for customer in top3_customers]
+    }
+
     return render(request, 'restaurant/report.html', {
         "revenue": revenue,
         "orders": orders,
         "meal": meal,
-        "driver": driver
+        "driver": driver,
+        "customer": customer
     })
 
 

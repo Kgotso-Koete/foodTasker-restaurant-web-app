@@ -5,7 +5,108 @@
 {% block page %}
 
 <div class="row">
-  <div class="col-lg-8">
+  
+  <div class="col-lg-12">
+
+    <!-- TOP 3 Meals -->
+    <div class="panel col-lg-4 pie-chart">
+        <div class="panel-heading bg-blue">
+          <h4 class="panel-title text-center text-white">
+              Top 3 Meals
+          </h4>
+        </div>
+        <div class="panel-body">
+            <canvas id="mealChart" height="242"></canvas>
+            <script>
+                var ctx = document.getElementById("mealChart").getContext("2d");
+                var data = {
+                    labels: {{ meal.labels|safe }},
+                    datasets: [
+                        {
+                            backgroundColor: [
+                              "#36A2EB", "#FFCE56", "#FF6384"
+                            ],
+                            data: {{ meal.data }}
+                        }
+                    ]
+                };
+
+                new Chart(ctx, {
+                  type: 'pie',
+                  data: data
+                });
+
+            </script>
+        </div>
+    </div> 
+
+    <!-- TOP 3 Driver ALL TIME -->
+    <div class="panel col-lg-4 pie-chart">
+        <div class="panel-heading bg-blue">
+          <h4 class="panel-title text-center text-white">
+              Top 3 Drivers
+          </h4>
+        </div>
+        <div class="panel-body">
+            <canvas id="driverChart" height="242"></canvas>
+            <script>
+                var ctx = document.getElementById("driverChart").getContext("2d");
+                var data = {
+                    labels: {{ driver.labels|safe }},
+                    datasets: [
+                        {
+                            backgroundColor: [
+                              "#36A2EB", "#FFCE56", "#FF6384"
+                            ],
+                            data: {{ driver.data }}
+                        }
+                    ]
+                };
+
+                new Chart(ctx, {
+                  type: 'pie',
+                  data: data
+                });
+
+            </script>
+        </div>
+    </div>
+                     
+    <!-- TOP 3 Customers ALL TIME -->
+    <div class="panel col-lg-4 pie-chart">
+      <div class="panel-heading bg-blue">
+        <h4 class="panel-title text-center text-white">
+            Top 3 Customers
+        </h4>
+      </div>
+      <div class="panel-body">
+          <canvas id="customerChart" height="242"></canvas>
+          <script>
+              var ctx = document.getElementById("customerChart").getContext("2d");
+              var data = {
+                  labels: {{ customer.labels|safe }},
+                  datasets: [
+                      {
+                          backgroundColor: [
+                            "#36A2EB", "#FFCE56", "#FF6384"
+                          ],
+                          data: {{customer.data }}
+                      }
+                  ]
+              };   
+
+              new Chart(ctx, {
+                type: 'pie',
+                data: data
+              });
+
+          </script>
+      </div>
+  </div>
+
+  </div>
+
+  <div class="col-lg-12">
     <!-- Revenue by Week -->
     <div class="panel">
       <div class="panel-heading bg-blue">
@@ -68,73 +169,7 @@
       </div>
     </div>
   </div>
-  <div class="col-lg-4">
-
-    <!-- TOP 3 Meals -->
-    <div class="panel">
-        <div class="panel-heading bg-blue">
-          <h4 class="panel-title text-center text-white">
-              Top 3 Meals
-          </h4>
-        </div>
-        <div class="panel-body">
-            <canvas id="mealChart" height="242"></canvas>
-            <script>
-                var ctx = document.getElementById("mealChart").getContext("2d");
-                var data = {
-                    labels: {{ meal.labels|safe }},
-                    datasets: [
-                        {
-                            backgroundColor: [
-                              "#36A2EB", "#FFCE56", "#FF6384"
-                            ],
-                            data: {{ meal.data }}
-                        }
-                    ]
-                };
-
-                new Chart(ctx, {
-                  type: 'pie',
-                  data: data
-                });
-
-            </script>
-        </div>
-    </div> 
-
-    <!-- TOP 3 Driver ALL TIME -->
-    <div class="panel">
-        <div class="panel-heading bg-blue">
-          <h4 class="panel-title text-center text-white">
-              Top 3 Drivers
-          </h4>
-        </div>
-        <div class="panel-body">
-            <canvas id="driverChart" height="242"></canvas>
-            <script>
-                var ctx = document.getElementById("driverChart").getContext("2d");
-                var data = {
-                    labels: {{ driver.labels|safe }},
-                    datasets: [
-                        {
-                            backgroundColor: [
-                              "#36A2EB", "#FFCE56", "#FF6384"
-                            ],
-                            data: {{ driver.data }}
-                        }
-                    ]
-                };
-
-                new Chart(ctx, {
-                  type: 'pie',
-                  data: data
-                });
-
-            </script>
-        </div>
-    </div>
-
-  </div>
+  
 </div>
 
 {% endblock %}

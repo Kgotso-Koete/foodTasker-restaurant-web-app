@@ -126,7 +126,7 @@ Stripe payment API was used (using test keys and test tokens)
 - Back end
 
   - Version 1 (Code4Startup Tutorial): 31 hours
-  - Version 2 (personal modifications): x hours
+  - Version 2 (personal modifications): 5 hours 
 
 ---
 
