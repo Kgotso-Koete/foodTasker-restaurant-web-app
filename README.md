@@ -8,6 +8,13 @@ Foodtasker is an UberEats clone in which customers can order takeaway food on th
 
 ---
 
+### Screen shot of the application
+
+![](/screenshots/FoodtaskerWeb_screenshot_1.png)
+![](/screenshots/FoodtaskerWeb_screenshot_2.png)
+
+---
+
 ### Technology stack
 
 Python Django, SQLite 3, Bootstrap 3 and Stripe for payments
