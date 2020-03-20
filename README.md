@@ -75,7 +75,7 @@ This code is for the back end which includes databases and APIs, and web based a
 
 ---
 
-### How to run the code
+### How to run the code without containers
 
 The back end API is deployed on Heroku, and the front end is deployed on ??. Here is the [demo](https://arcane-spire-07518.herokuapp.com/restaurant/), and here is the production api link `https://arcane-spire-07518.herokuapp.com/` that can be used with any front end for requests
 
@@ -97,6 +97,19 @@ Run `python manage.py runserver`
 ### 4: View application
 
 Open up `http://localhost:8000/` in your browser
+
+### How to run the code using Docker containers (if you have Docker and Docker Compose installed):
+
+Download the repository and navigate to the project root folder locally.
+
+### 1: Build image
+
+1. Build and run locally with `docker-compose up`
+2. Or just pull the image from my repository with `docker pull kgotsok/optimus-thee-prime:foodtaskerwebapp_web`, and then run it with `docker-compose up`
+
+### 2: Open the app (be sure to also check which IP address is being used in the case of virtual machines)
+
+And if you now enter [http://localhost:8000/](http://localhost:8000/) you’ll see that it’s running!
 
 ---
 
