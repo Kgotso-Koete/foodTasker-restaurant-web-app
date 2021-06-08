@@ -9,7 +9,7 @@ django-rest-framework-social-oauth2==1.0.4
 djangorestframework==3.4.3
 gunicorn==19.6.0
 oauthlib==1.0.3
-Pillow==5.1.0
+Pillow==8.2.0
 PyJWT==1.4.2
 python-social-auth==0.2.21
 python3-openid==3.0.10
